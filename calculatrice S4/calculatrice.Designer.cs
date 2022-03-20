@@ -1,6 +1,6 @@
 ﻿namespace calculatrice_S4
 {
-    partial class Form1
+    partial class calculatrice
     {
         /// <summary>
         ///  Required designer variable.
@@ -38,6 +38,14 @@
             this.sept = new System.Windows.Forms.Button();
             this.huit = new System.Windows.Forms.Button();
             this.neuf = new System.Windows.Forms.Button();
+            this.zero = new System.Windows.Forms.Button();
+            this.reset = new System.Windows.Forms.Button();
+            this.point = new System.Windows.Forms.Button();
+            this.egale = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.sous = new System.Windows.Forms.Button();
+            this.mul = new System.Windows.Forms.Button();
+            this.div = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // un
@@ -56,6 +64,7 @@
             this.resultat.Name = "resultat";
             this.resultat.Size = new System.Drawing.Size(423, 23);
             this.resultat.TabIndex = 1;
+            this.resultat.TextChanged += new System.EventHandler(this.resultat_TextChanged);
             // 
             // deux
             // 
@@ -137,11 +146,99 @@
             this.neuf.UseVisualStyleBackColor = true;
             this.neuf.Click += new System.EventHandler(this.neuf_Click);
             // 
-            // Form1
+            // zero
+            // 
+            this.zero.Location = new System.Drawing.Point(31, 182);
+            this.zero.Name = "zero";
+            this.zero.Size = new System.Drawing.Size(67, 32);
+            this.zero.TabIndex = 10;
+            this.zero.Text = "0";
+            this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.zero_Click);
+            // 
+            // reset
+            // 
+            this.reset.Location = new System.Drawing.Point(266, 69);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(67, 32);
+            this.reset.TabIndex = 11;
+            this.reset.Text = "C";
+            this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
+            // 
+            // point
+            // 
+            this.point.Location = new System.Drawing.Point(104, 182);
+            this.point.Name = "point";
+            this.point.Size = new System.Drawing.Size(75, 32);
+            this.point.TabIndex = 12;
+            this.point.Text = ".";
+            this.point.UseVisualStyleBackColor = true;
+            this.point.Click += new System.EventHandler(this.point_Click);
+            // 
+            // egale
+            // 
+            this.egale.Location = new System.Drawing.Point(185, 182);
+            this.egale.Name = "egale";
+            this.egale.Size = new System.Drawing.Size(75, 32);
+            this.egale.TabIndex = 13;
+            this.egale.Text = "=";
+            this.egale.UseVisualStyleBackColor = true;
+            this.egale.Click += new System.EventHandler(this.egale_Click);
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(266, 107);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(67, 32);
+            this.add.TabIndex = 14;
+            this.add.Text = "+";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // sous
+            // 
+            this.sous.Location = new System.Drawing.Point(266, 147);
+            this.sous.Name = "sous";
+            this.sous.Size = new System.Drawing.Size(67, 32);
+            this.sous.TabIndex = 15;
+            this.sous.Text = "-";
+            this.sous.UseVisualStyleBackColor = true;
+            this.sous.Click += new System.EventHandler(this.sous_Click);
+            // 
+            // mul
+            // 
+            this.mul.Location = new System.Drawing.Point(266, 182);
+            this.mul.Name = "mul";
+            this.mul.Size = new System.Drawing.Size(67, 32);
+            this.mul.TabIndex = 16;
+            this.mul.Text = "*";
+            this.mul.UseVisualStyleBackColor = true;
+            this.mul.Click += new System.EventHandler(this.mul_Click);
+            // 
+            // div
+            // 
+            this.div.Location = new System.Drawing.Point(339, 69);
+            this.div.Name = "div";
+            this.div.Size = new System.Drawing.Size(67, 32);
+            this.div.TabIndex = 17;
+            this.div.Text = "/";
+            this.div.UseVisualStyleBackColor = true;
+            this.div.Click += new System.EventHandler(this.div_Click);
+            // 
+            // calculatrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 450);
+            this.ClientSize = new System.Drawing.Size(475, 226);
+            this.Controls.Add(this.div);
+            this.Controls.Add(this.mul);
+            this.Controls.Add(this.sous);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.egale);
+            this.Controls.Add(this.point);
+            this.Controls.Add(this.reset);
+            this.Controls.Add(this.zero);
             this.Controls.Add(this.neuf);
             this.Controls.Add(this.huit);
             this.Controls.Add(this.sept);
@@ -152,8 +249,8 @@
             this.Controls.Add(this.deux);
             this.Controls.Add(this.resultat);
             this.Controls.Add(this.trois);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "calculatrice";
+            this.Text = "calculatrice";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +268,13 @@
         private Button sept;
         private Button huit;
         private Button neuf;
+        private Button zero;
+        private Button reset;
+        private Button point;
+        private Button egale;
+        private Button add;
+        private Button sous;
+        private Button mul;
+        private Button div;
     }
 }
