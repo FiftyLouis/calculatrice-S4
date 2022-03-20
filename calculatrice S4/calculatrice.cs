@@ -1,65 +1,23 @@
+using Calculatrice;
+
 namespace calculatrice_S4
 {
     public partial class calculatrice : Form
     {
+
+
+        private Calcul calcule;
         public calculatrice()
         {
             InitializeComponent();
+
+            calcule = new Calcul();
         }
 
-        private void six_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "6";
-        }
-
-        private void sept_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "7";
-        }
-
-        private void neuf_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "9";
-        }
-
-        private void un_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "1";
-        }
-
-        private void deux_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "2";
-        }
-
-        private void trois_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "3";
-        }
-
-        private void quatre_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "4";
-        }
-
-        private void cinq_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "5";
-        }
-
-        private void huit_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "8";
-        }
 
         private void resultat_TextChanged(object sender, EventArgs e)
         {
             
-        }
-
-        private void zero_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "0";
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -96,5 +54,18 @@ namespace calculatrice_S4
         {
             resultat.Text += "/";
         }
+
+        private void buttonNumber_Click(object sender, EventArgs e)
+        {
+            if (calcule.CalculState == CalculStateEnum.BeginAquireOperand2)
+            {
+                // Clear Enter
+                resultat.Clear();
+                calcule.CalculState = CalculStateEnum.AquireOperand2;
+            }
+
+            resultat.Text += (sender as Button).Text;
+        }
+
     }
 }
