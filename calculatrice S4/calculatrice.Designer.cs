@@ -194,7 +194,7 @@
             this.add.TabIndex = 14;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.buttonCal_onClick);
+            this.add.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // sous
             // 
@@ -204,7 +204,7 @@
             this.sous.TabIndex = 15;
             this.sous.Text = "-";
             this.sous.UseVisualStyleBackColor = true;
-            this.sous.Click += new System.EventHandler(this.buttonCal_onClick);
+            this.sous.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // mul
             // 
@@ -214,7 +214,7 @@
             this.mul.TabIndex = 16;
             this.mul.Text = "*";
             this.mul.UseVisualStyleBackColor = true;
-            this.mul.Click += new System.EventHandler(this.buttonCal_onClick);
+            this.mul.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // div
             // 
@@ -224,7 +224,7 @@
             this.div.TabIndex = 17;
             this.div.Text = "/";
             this.div.UseVisualStyleBackColor = true;
-            this.div.Click += new System.EventHandler(this.buttonCal_onClick);
+            this.div.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // calculatrice
             // 

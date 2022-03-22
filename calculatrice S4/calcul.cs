@@ -1,4 +1,8 @@
-﻿namespace Calculatrice
+﻿using System;
+using System.Data;
+using System.Text.RegularExpressions;
+
+namespace Calculatrice
 {
     public enum CalculStateEnum
     {
@@ -11,67 +15,28 @@
     public class Calcul
     {
 
-        private double result;
+        public String result{ get; set; }
 
-        private CalculStateEnum calculState;
-        public CalculStateEnum CalculState
-        {
-            get { return calculState; }
-            set { calculState = value; }
-        }
-
-        private double operand1;
-        public double Operand1
-        {
-            get { return operand1; }
-            set { operand1 = value; }
-        }
-
-        private double operand2;
-        public double Openrad2
-        {
-            get { return operand2; }
-            set { operand2 = value; }
-        }
-
-        private string operation;
-        public string Operation
-        {
-            get { return operation; }
-            set { operation = value; }
-        }
 
         public Calcul()
         {
-            calculState = CalculStateEnum.AquireOperand1;
-            operand1 = 0;
-            operand2 = 0;
-            operation = string.Empty;
+            this.result = string.Empty;
         }
 
         public double Calculate()
         {
-            if (operation == "+")
-            {
-                result = operand1 + operand2;
-            }
-            if (operation == "-")
-            {
-                result = operand1 - operand2;
-            }
-            if (operation == "*")
-            {
-                result = operand1 * operand2;
-            }
-            if (operation == "/")
-            {
-                result = operand1 / operand2;
-            }
-            if (operation == "%")
-            {
+            /*Regex add = new Regex(@"(?<numberA>\d+)\+(?<numberB>\d+)");
 
-            }
-            return result;
+            if (add.IsMatch(this.result))
+            {
+               string[] operands =  Regex.Split(result, @"\s+");
+               double n0 = Convert.ToDouble(operands[0]);
+               double n1 = Convert.ToDouble(operands[1]);
+                Console.WriteLine(n1 + n0);
+            }*/
+
+            return Convert.ToDouble(new DataTable().Compute(result, null));
+
         }
     }
 }
