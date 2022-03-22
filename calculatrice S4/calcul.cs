@@ -11,14 +11,8 @@
     public class Calcul
     {
 
-        /// <summary>
-        /// Resultat du Calcul
-        /// </summary>
         private double result;
 
-        /// <summary>
-        /// Etat du Calcul
-        /// </summary>
         private CalculStateEnum calculState;
         public CalculStateEnum CalculState
         {
@@ -50,8 +44,8 @@
         public Calcul()
         {
             calculState = CalculStateEnum.AquireOperand1;
-            operand1 = Double.PositiveInfinity;
-            operand2 = Double.PositiveInfinity;
+            operand1 = 0;
+            operand2 = 0;
             operation = string.Empty;
         }
 

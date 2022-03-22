@@ -59,13 +59,37 @@ namespace calculatrice_S4
         {
             if (calcule.CalculState == CalculStateEnum.BeginAquireOperand2)
             {
-                // Clear Enter
-                resultat.Clear();
                 calcule.CalculState = CalculStateEnum.AquireOperand2;
+            }else if(calcule.CalculState == CalculStateEnum.Calculation)
+            {
+                resultat.Clear();
+                calcule.CalculState = CalculStateEnum.AquireOperand1;
             }
 
             resultat.Text += (sender as Button).Text;
         }
 
+
+        private void buttonCal_onClick(object sender, EventArgs e)
+        {
+            if(calcule.CalculState == CalculStateEnum.AquireOperand1)
+            {
+                calcule.Operand1 = Convert.ToDouble(resultat.Text);
+                resultat.Clear();
+                calcule.Operation = (sender as Button).Text;
+                calcule.CalculState = CalculStateEnum.BeginAquireOperand2;
+            }
+        }
+
+        private void buttonEqual_onClick(object sender, EventArgs e)
+        {
+            if(calcule.CalculState == CalculStateEnum.AquireOperand2)
+            {
+                calcule.Openrad2 = Convert.ToDouble(resultat.Text);
+                resultat.Clear();
+                resultat.Text = Convert.ToString(calcule.Calculate());
+                calcule.CalculState = CalculStateEnum.Calculation;
+            }
+        }
     }
 }

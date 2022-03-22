@@ -172,7 +172,7 @@
             this.point.Name = "point";
             this.point.Size = new System.Drawing.Size(75, 32);
             this.point.TabIndex = 12;
-            this.point.Text = ".";
+            this.point.Text = ",";
             this.point.UseVisualStyleBackColor = true;
             this.point.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
@@ -184,7 +184,7 @@
             this.egale.TabIndex = 13;
             this.egale.Text = "=";
             this.egale.UseVisualStyleBackColor = true;
-            this.egale.Click += new System.EventHandler(this.egale_Click);
+            this.egale.Click += new System.EventHandler(this.buttonEqual_onClick);
             // 
             // add
             // 
@@ -194,7 +194,7 @@
             this.add.TabIndex = 14;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
+            this.add.Click += new System.EventHandler(this.buttonCal_onClick);
             // 
             // sous
             // 
@@ -204,7 +204,7 @@
             this.sous.TabIndex = 15;
             this.sous.Text = "-";
             this.sous.UseVisualStyleBackColor = true;
-            this.sous.Click += new System.EventHandler(this.sous_Click);
+            this.sous.Click += new System.EventHandler(this.buttonCal_onClick);
             // 
             // mul
             // 
@@ -214,7 +214,7 @@
             this.mul.TabIndex = 16;
             this.mul.Text = "*";
             this.mul.UseVisualStyleBackColor = true;
-            this.mul.Click += new System.EventHandler(this.mul_Click);
+            this.mul.Click += new System.EventHandler(this.buttonCal_onClick);
             // 
             // div
             // 
