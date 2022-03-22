@@ -224,7 +224,7 @@
             this.div.TabIndex = 17;
             this.div.Text = "/";
             this.div.UseVisualStyleBackColor = true;
-            this.div.Click += new System.EventHandler(this.div_Click);
+            this.div.Click += new System.EventHandler(this.buttonCal_onClick);
             // 
             // calculatrice
             // 

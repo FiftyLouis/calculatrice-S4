@@ -17,43 +17,15 @@ namespace calculatrice_S4
 
         private void resultat_TextChanged(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
             resultat.Clear();
+            calcule.CalculState = CalculStateEnum.AquireOperand1;
         }
 
-        private void egale_Click(object sender, EventArgs e)
-        {
-            resultat.Text = "sa marche";
-        }
-
-        private void point_Click(object sender, EventArgs e)
-        {
-            resultat.Text += ".";
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "+";
-        }
-
-        private void sous_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "-";
-        }
-
-        private void mul_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "*";
-        }
-
-        private void div_Click(object sender, EventArgs e)
-        {
-            resultat.Text += "/";
-        }
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
