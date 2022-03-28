@@ -172,7 +172,7 @@
             this.point.Name = "point";
             this.point.Size = new System.Drawing.Size(75, 32);
             this.point.TabIndex = 12;
-            this.point.Text = ",";
+            this.point.Text = ".";
             this.point.UseVisualStyleBackColor = true;
             this.point.Click += new System.EventHandler(this.buttonNumber_Click);
             // 

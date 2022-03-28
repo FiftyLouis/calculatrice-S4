@@ -29,22 +29,25 @@ namespace calculatrice_S4
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
+            if(calcule.currentState == Calcul.state.afterResult)
+            {
+                resultat.Clear();
+                calcule.result = string.Empty;
+                calcule.currentState = Calcul.state.beforeResult;
+            }
             resultat.Text += (sender as Button).Text;
             calcule.result += (sender as Button).Text;
         }
 
-
-        private void buttonCal_onClick(object sender, EventArgs e)
-        {
-            
-        }
-
         private void buttonEqual_onClick(object sender, EventArgs e)
         {
-            resultat.Clear();
+            calcule.result = resultat.Text;
             try
             {
+                resultat.Clear();
                 resultat.Text = Convert.ToString(calcule.Calculate());
+                calcule.currentState = Calcul.state.afterResult;
+                Console.WriteLine(calcule.currentRegex);
             }
             catch (Exception ex)
             {
